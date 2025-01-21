@@ -158,27 +158,22 @@ tinymce.PluginManager.add("custombox", function (editor, url) {
                     : null;
 
                 // Tạo hoặc chỉnh sửa HTML cho khung tùy chỉnh
-                const customDiv = `
-                    <div
-                    style="
-                        background-color: ${data.backgroundColor};
-                        border: ${data.borderWidth}px solid ${data.borderColor};
-                        float: ${data.floatPosition};
-                        padding-top: ${data.paddingTop}px;
-                        padding-right: ${data.paddingRight}px;
-                        padding-bottom: ${data.paddingBottom}px;
-                        padding-left: ${data.paddingLeft}px;
-                        margin-top: ${data.marginTop}px;
-                        margin-right: ${data.marginRight}px;
-                        margin-bottom: ${data.marginBottom}px;
-                        margin-left:${data.marginLeft}px;
-                        width: ${data.width};
-                        font-size: ${data.fontSize}px;
-                    "
-                    class="custom-box">
-                    ${content || "Your content here ..."}
-                    </div>
-                `;
+                const customDiv = `<div style="background-color: ${data.backgroundColor};`+
+                        `border: ${data.borderWidth}px solid ${data.borderColor};`+
+                        `float: ${data.floatPosition};`+
+                        `padding-top: ${data.paddingTop}px;`+
+                        `padding-right: ${data.paddingRight}px;`+
+                        `padding-bottom: ${data.paddingBottom}px;`+
+                        `padding-left: ${data.paddingLeft}px;`+
+                        `margin-top: ${data.marginTop}px;`+
+                        `margin-right: ${data.marginRight}px;`+
+                        `margin-bottom: ${data.marginBottom}px;`+
+                        `margin-left:${data.marginLeft}px;`+
+                        `width: ${data.width};`+
+                        `font-size: ${data.fontSize}px;"`+
+                    `class="custom-box">`+
+                    `${content || "Your content here ..."}`+
+                    `</div>`;
                 console.log("customDiv", customDiv);
 
                 if (existingData.isEdit) {
@@ -261,8 +256,8 @@ tinymce.PluginManager.add("custombox", function (editor, url) {
     return {
         getMetadata: function () {
             return {
-                name: "Custom Box Plugin (Default Values Fixed)",
-                url: "https://example.com/custom-box-plugin-defaults-fixed",
+                name: "Custom Box Plugin",
+                url: "https://github.com/duyld2108/tinymce-plugin-float-div",
             };
         },
     };
